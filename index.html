@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App | Premium Experience</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="weather-app">
+        <header class="app-header">
+            <h1><i class="fas fa-wind"></i> SKYCAST</h1>
+        </header>
+
+        <div class="search-container">
+            <input type="text" id="location-search" placeholder="Search for a city..." aria-label="Search city">
+            <button id="search-btn"><i class="fas fa-search"></i> Search</button>
+            <button id="unit-toggle" title="Toggle Units">°C</button>
+            <button id="settings-btn" title="Theme Settings"><i class="fas fa-moon"></i></button>
+        </div>
+
+        <main class="dashboard-page">
+            <!-- Current Weather Hero Card -->
+            <section class="card current-weather" id="weather-info">
+                <div class="location-name">Loading...</div>
+                <div class="weather-icon-main">
+                    <i class="fas fa-spinner fa-spin"></i>
+                </div>
+            </section>
+
+            <!-- Temperature Trend Chart Card -->
+            <section class="card forecast">
+                <h2><i class="fas fa-chart-line"></i> 24h Temperature Trend</h2>
+                <div class="chart-container">
+                    <canvas id="tempChart"></canvas>
+                </div>
+                <h2 style="margin-top: 30px;"><i class="fas fa-calendar-alt"></i> 5-Day Forecast</h2>
+                <div class="forecast-container" id="forecast-container">
+                    <!-- Forecast items injected here -->
+                </div>
+            </section>
+
+            <!-- Saved Locations Card -->
+            <section class="card saved-locations">
+                <h2><i class="fas fa-bookmark"></i> Pinned Locations</h2>
+                <ul class="locations-list" id="locations-list">
+                    <!-- Saved items injected here -->
+                </ul>
+            </section>
+        </main>
+    </div>
+
+    <!-- Toast Notifications -->
+    <div class="toast" id="toast"></div>
+
+    <!-- Custom Logic -->
+    <script src="app.js"></script>
+</body>
+
+</html>
